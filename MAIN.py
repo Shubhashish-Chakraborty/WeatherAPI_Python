@@ -46,7 +46,9 @@ def getTemperature():
     
     print()
 
-    # WORK FROM HERE...
+    askCity = input("Enter City [Example:...] : ")
+
+
 
     print()
 
