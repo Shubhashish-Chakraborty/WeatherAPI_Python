@@ -5,7 +5,7 @@ import datetime
 
 def getAPIkey():
 
-    with open("C:/Users/shubh/OneDrive/Desktop/PythonProj/WeatherAPI_Python/API_KEY/api_key.dat", "rb") as f:
+    with open("./WeatherAPI_Python/API_KEY/api_key.dat", "rb") as f:
 
         try:
             while True:
