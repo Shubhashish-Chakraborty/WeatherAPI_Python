@@ -3,6 +3,7 @@ import requests
 import datetime
 import os
 import time
+import pygetindia as pyin
 
 print()
 os.system("cls")
@@ -42,13 +43,16 @@ API_KEY = getAPIkey()
 #Main Menu Drive For the APP
 
 
-def getTemperature():
+def getTemperature_states():
     
     print()
 
-    askCity = input("Enter City [Example:...] : ")
 
+    statesList = pyin.states()
 
+    for state in range(len(statesList)):
+
+        print(f"{state + 1} -> {statesList[state]}")
 
     print()
 
@@ -60,7 +64,7 @@ def getTemperature():
 
 while (True):
 
-    options = ["1-> Find Temperature" , "2-> EXIT\n"]
+    options = ["1-> Select State and get Temperature" , "2-> EXIT\n"]
 
 
     optList = []
@@ -79,7 +83,7 @@ while (True):
 
         if (int(getChoice) == 1):
 
-            getTemperature()
+            getTemperature_states()
         
         
         elif (int(getChoice) == 2): #EXIT
