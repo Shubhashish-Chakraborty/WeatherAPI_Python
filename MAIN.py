@@ -40,10 +40,20 @@ def ConvertKelvin(kelvinValue): # camelCase
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 API_KEY = getAPIkey()
 
-#Main Menu Drive For the APP
 
 
-def getTemperature_states():
+
+def getTemperature_states(STATE_NUM):
+
+    return
+
+    
+
+
+
+
+
+def select_states():
     
     print()
 
@@ -54,10 +64,22 @@ def getTemperature_states():
 
         print(f"{state + 1} -> {statesList[state]}")
 
+
+    print("< Select State >")
+    
+
     print()
 
+    getState = input("Enter State Number : ")
 
+    if (getState.isdigit()):
 
+        getTemperature_states(int(getState))
+    
+    else:
+
+        os.system("cls")
+        print("Invalid Input, Try Again!")
 
 
 
@@ -83,7 +105,7 @@ while (True):
 
         if (int(getChoice) == 1):
 
-            getTemperature_states()
+            select_states()
         
         
         elif (int(getChoice) == 2): #EXIT
