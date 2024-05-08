@@ -43,15 +43,6 @@ API_KEY = getAPIkey()
 
 
 
-def getTemperature_states(STATE_NUM):
-
-    return
-
-    
-
-
-
-
 
 def select_states():
     
@@ -72,14 +63,26 @@ def select_states():
 
     getState = input("Enter State Number : ")
 
-    if (getState.isdigit()):
+    for num in range(len(statesList)):
 
-        getTemperature_states(int(getState))
+        if (int(getState) == (num + 1)):
+
+            STATE_TEMP = statesList[num]
     
-    else:
 
-        os.system("cls")
-        print("Invalid Input, Try Again!")
+    print(STATE_TEMP)
+
+
+
+    
+    # if (getState.isdigit()):
+
+    #     getTemperature_states(int(getState))
+    
+    # else:
+
+    #     os.system("cls")
+    #     print("Invalid Input, Try Again!")
 
 
 
