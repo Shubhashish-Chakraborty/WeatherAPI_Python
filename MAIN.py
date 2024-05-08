@@ -42,9 +42,13 @@ API_KEY = getAPIkey()
 
 
 
+def TEMPERATURE_MAIN(CITY):
+
+    return
 
 
-def select_states():
+
+def select_state_city():
     
     print()
 
@@ -61,35 +65,54 @@ def select_states():
 
     print()
 
-    getState = input("Enter State Number : ")
+    getStateNum = input("Enter State Number : ")
+
+    # Selecting State
 
     for num in range(len(statesList)):
 
-        if (int(getState) == (num + 1)):
+        if (int(getStateNum) == (num + 1)):
 
-            STATE_TEMP = statesList[num]
+            State_Selected = statesList[num]
     
 
-    print(STATE_TEMP)
+    StatesCitiesDICT = pyin.states_cities()
+
+    # Selecting the respective cities for the selected State
 
 
+    for key in StatesCitiesDICT:
 
+        if (State_Selected == key):
+
+            RESP_Cities_List = StatesCitiesDICT[key]
+
+
+    # Displaying the cities
     
-    # if (getState.isdigit()):
+    for city in range(len(RESP_Cities_List)):
 
-    #     getTemperature_states(int(getState))
-    
-    # else:
+        print(f"{city + 1} -> {RESP_Cities_List[city]}")
 
-    #     os.system("cls")
-    #     print("Invalid Input, Try Again!")
+    getCityNum = input("Enter City Number : ")
+
+
+    # Selected the CITY!!
+
+    for num in range(len(RESP_Cities_List)):
+
+        if (int(getCityNum) == (num + 1)):
+            City_Selected = RESP_Cities_List[num]
+
+
+    TEMPERATURE_MAIN(City_Selected) # Main temperature function invoked!!
 
 
 
 
 while (True):
 
-    options = ["1-> Select State and get Temperature" , "2-> EXIT\n"]
+    options = ["1-> Select State and City and get Temperature" , "2-> EXIT\n"]
 
 
     optList = []
@@ -108,7 +131,7 @@ while (True):
 
         if (int(getChoice) == 1):
 
-            select_states()
+            select_state_city()
         
         
         elif (int(getChoice) == 2): #EXIT
