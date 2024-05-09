@@ -44,7 +44,21 @@ API_KEY = getAPIkey()
 
 def TEMPERATURE_MAIN(CITY):
 
-    return
+    print()
+
+
+    URL = BASE_URL + "appid=" + API_KEY + "&q=" + CITY
+    response = requests.get(URL).json()
+
+    # print(ConvertKelvin(response['main']['temp'])['CELSIUS'])
+
+    print(f"Temperature({CITY}) : {ConvertKelvin(response['main']['temp'])['CELSIUS']} °C")
+
+
+
+
+
+    print()
 
 
 
